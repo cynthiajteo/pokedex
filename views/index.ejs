@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head.ejs')%>
+    </head>
+    <body>
+        <h1>Pokedex</h1>
+        <div class="add">
+            <a href="/pokemon/new"><button>Add new Pokemon</button></a>
+        </div>
+
+        <br />
+
+        <div class="container">
+            <% for (let i = 0; i < pokemon.length; i++) { %>
+            <div class="pokemon">
+                <a href="/pokemon/<%=i%>">
+                    <img
+                        id="index-img"
+                        src="<%=pokemon[i].img%>"
+                        alt="<%=pokemon[i].name%>"
+                        class="src"
+                /></a>
+
+                <div class="index-actions">
+                    <a href="/pokemon/<%=i%>/edit"><button>Edit</button></a>
+                    <form action="/pokemon/<%=i%>?_method=DELETE" method="POST">
+                        <input type="submit" value="Delete" />
+                    </form>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </body>
+</html>
