@@ -16,13 +16,28 @@
                         id="name"
                         value="<%=item.name%>"
                     />
-                    <label for="name">Type</label>
+                    <label for="type">Type</label>
                     <input
                         type="text"
                         name="type"
                         id="type"
                         value="<%=item.type%>"
                     />
+                    <label for="statsAtt">Attack</label>
+                    <input
+                        type="text"
+                        name="statsAtt"
+                        id="statsAtt"
+                        value="<%=item.stats.attack%>"
+                    />
+                    <label for="name">Defense</label>
+                    <input
+                        type="text"
+                        name="statsDef"
+                        id="statsDef"
+                        value="<%=item.stats.defense%>"
+                    />
+                    <br />
                     <input type="submit" value="Edit Pokemon" />
                 </form>
             </div>
